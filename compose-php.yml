@@ -1,0 +1,9 @@
+services:
+  app:
+    build: ./php
+    volumes:
+      - type: bind
+        source: ./php
+        target: /home/tdd
+    working_dir: /home/tdd
+    tty: true
