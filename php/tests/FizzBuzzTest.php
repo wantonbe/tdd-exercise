@@ -5,6 +5,9 @@ namespace Tests;
 use App\FizzBuzz;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers App\FizzBuzz
+ */
 class FizzBuzzTest extends TestCase
 {
     /** @test */
