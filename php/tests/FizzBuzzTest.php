@@ -23,4 +23,11 @@ class FizzBuzzTest extends TestCase
         $fizz_buzz = new FizzBuzz();
         $this->assertSame(2, $fizz_buzz->execute(2));
     }
+
+    /** @test */
+    public function 入力値3の場合はFizzを返す()
+    {
+        $fizz_buzz = new FizzBuzz();
+        $this->assertSame("Fizz", $fizz_buzz->execute(3));
+    }
 }
