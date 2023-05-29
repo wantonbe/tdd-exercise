@@ -23,4 +23,10 @@ class FizzBuzzNumberTest extends TestCase
         $number = new FizzBuzzNumber(100);
         $this->assertFalse($number->isDivisibleBy(3));
     }
+
+    /** @test */
+    public function toInt__数値で返す()
+    {
+        $this->assertSame(100, (new FizzBuzzNumber(100))->toInt());
+    }
 }

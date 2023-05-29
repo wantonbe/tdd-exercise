@@ -12,4 +12,9 @@ class FizzBuzzNumber
     {
         return $this->number % $number === 0;
     }
+
+    public function toInt()
+    {
+        return $this->number;
+    }
 }
