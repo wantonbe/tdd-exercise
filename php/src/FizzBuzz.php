@@ -2,19 +2,21 @@
 
 namespace App;
 
+use App\FizzBuzzNumber;
+
 class FizzBuzz
 {
-    public function execute(int $number)
+    public function execute(FizzBuzzNumber $number): int|string
     {
-        if ($number % 3 === 0 && $number % 5 === 0) {
+        if ($number->isDivisibleBy(3) && $number->isDivisibleBy(5)) {
             return "FizzBuzz";
         }
-        if ($number % 3 === 0) {
+        if ($number->isDivisibleBy(3)) {
             return "Fizz";
         }
-        if ($number % 5 === 0) {
+        if ($number->isDivisibleBy(5)) {
             return "Buzz";
         }
-        return $number;
+        return $number->toInt();
     }
 }
