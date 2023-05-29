@@ -8,12 +8,12 @@ class FizzBuzzNumber
     {
     }
 
-    public function isDivisibleBy(int $number)
+    public function isDivisibleBy(int $number): bool
     {
         return $this->number % $number === 0;
     }
 
-    public function toInt()
+    public function toInt(): int
     {
         return $this->number;
     }
