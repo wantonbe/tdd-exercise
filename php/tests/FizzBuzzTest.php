@@ -18,51 +18,44 @@ class FizzBuzzTest extends TestCase
         $this->fizz_buzz = new FizzBuzz();
     }
 
-    /** @test */
-    public function 入力値1の場合は1を返す()
+    /**
+     * @test
+     * @testWith [3]
+     *           [6]
+     */
+    public function 入力値が3で割り切れる場合はFizzを返す($number)
     {
-        $this->assertSame(1, $this->fizz_buzz->execute(new FizzBuzzNumber(1)));
+        $this->assertSame("Fizz", $this->fizz_buzz->execute(new FizzBuzzNumber($number)));
     }
 
-    /** @test */
-    public function 入力値2の場合は2を返す()
+    /**
+     * @test
+     * @testWith [5]
+     *           [10]
+     */
+    public function 入力値が5で割り切れる場合はBuzzを返す($number)
     {
-        $this->assertSame(2, $this->fizz_buzz->execute(new FizzBuzzNumber(2)));
+        $this->assertSame("Buzz", $this->fizz_buzz->execute(new FizzBuzzNumber($number)));
     }
 
-    /** @test */
-    public function 入力値3の場合はFizzを返す()
+    /**
+     * @test
+     * @testWith [15]
+     *           [30]
+     */
+    public function 入力値が3でも5でも割り切れる場合はFizzBuzzを返す($number)
     {
-        $this->assertSame("Fizz", $this->fizz_buzz->execute(new FizzBuzzNumber(3)));
+        $this->assertSame("FizzBuzz", $this->fizz_buzz->execute(new FizzBuzzNumber($number)));
     }
 
-    /** @test */
-    public function 入力値6の場合はFizzを返す()
-    {
-        $this->assertSame("Fizz", $this->fizz_buzz->execute(new FizzBuzzNumber(6)));
-    }
 
-    /** @test */
-    public function 入力値5の場合はBuzzを返す()
+    /**
+     * @test
+     * @testWith [1]
+     *           [2]
+     */
+    public function 入力値が3でも5でも割り切れない場合は入力値を返す($number)
     {
-        $this->assertSame("Buzz", $this->fizz_buzz->execute(new FizzBuzzNumber(5)));
-    }
-
-    /** @test */
-    public function 入力値10の場合はBuzzを返す()
-    {
-        $this->assertSame("Buzz", $this->fizz_buzz->execute(new FizzBuzzNumber(10)));
-    }
-
-    /** @test */
-    public function 入力値15の場合はFizzBuzzを返す()
-    {
-        $this->assertSame("FizzBuzz", $this->fizz_buzz->execute(new FizzBuzzNumber(15)));
-    }
-
-    /** @test */
-    public function 入力値30の場合はFizzBuzzを返す()
-    {
-        $this->assertSame("FizzBuzz", $this->fizz_buzz->execute(new FizzBuzzNumber(30)));
+        $this->assertSame($number, $this->fizz_buzz->execute(new FizzBuzzNumber($number)));
     }
 }
